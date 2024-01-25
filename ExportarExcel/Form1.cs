@@ -16,7 +16,7 @@ namespace ExportarExcel
 
         private void Form1_Load(object sender, EventArgs e)
         {
-
+            
         }
 
         private void btnimportar_Click(object sender, EventArgs e)
@@ -40,17 +40,17 @@ namespace ExportarExcel
                                 }
                             });
 
-                            dataGridView1.DataSource = dataSet.Tables[0];
+                            dgv.DataSource = dataSet.Tables[0];
                         }
                     }
-                    dataGridView1.Columns[0].HeaderText = "Calle";
-                    dataGridView1.Columns[1].HeaderText = "Num";
-                    dataGridView1.Columns[2].HeaderText = "Colonia";
-                    dataGridView1.Columns[3].HeaderText = "Delegacion";
+                    dgv.Columns[0].HeaderText = "Calle";
+                    dgv.Columns[1].HeaderText = "Num";
+                    dgv.Columns[2].HeaderText = "Colonia";
+                    dgv.Columns[3].HeaderText = "Delegacion";
 
-                    dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
-                    dataGridView1.AutoResizeColumns();
-                    dataGridView1.DefaultCellStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 11);
+                    dgv.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+                    dgv.AutoResizeColumns();
+                    dgv.DefaultCellStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 11);
                 }
             }
 
@@ -59,7 +59,7 @@ namespace ExportarExcel
 
         private void tbnexportar_Click(object sender, EventArgs e)
         {
-            ExportToExcel(dataGridView1);
+            ExportToExcel(dgv);
 
         }
 

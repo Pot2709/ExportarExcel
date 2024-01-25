@@ -29,16 +29,16 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.btnimportar = new System.Windows.Forms.Button();
+            this.dgv = new System.Windows.Forms.DataGridView();
             this.tbnexportar = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.btnimportar = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.dataGridView1);
+            this.groupBox1.Controls.Add(this.dgv);
             this.groupBox1.Controls.Add(this.tbnexportar);
             this.groupBox1.Controls.Add(this.btnimportar);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -48,15 +48,13 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             // 
-            // btnimportar
+            // dgv
             // 
-            this.btnimportar.Location = new System.Drawing.Point(202, 37);
-            this.btnimportar.Name = "btnimportar";
-            this.btnimportar.Size = new System.Drawing.Size(75, 36);
-            this.btnimportar.TabIndex = 0;
-            this.btnimportar.Text = "Importar";
-            this.btnimportar.UseVisualStyleBackColor = true;
-            this.btnimportar.Click += new System.EventHandler(this.btnimportar_Click);
+            this.dgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv.Location = new System.Drawing.Point(6, 79);
+            this.dgv.Name = "dgv";
+            this.dgv.Size = new System.Drawing.Size(600, 279);
+            this.dgv.TabIndex = 2;
             // 
             // tbnexportar
             // 
@@ -68,13 +66,15 @@
             this.tbnexportar.UseVisualStyleBackColor = true;
             this.tbnexportar.Click += new System.EventHandler(this.tbnexportar_Click);
             // 
-            // dataGridView1
+            // btnimportar
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(6, 79);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(600, 279);
-            this.dataGridView1.TabIndex = 2;
+            this.btnimportar.Location = new System.Drawing.Point(202, 37);
+            this.btnimportar.Name = "btnimportar";
+            this.btnimportar.Size = new System.Drawing.Size(75, 36);
+            this.btnimportar.TabIndex = 0;
+            this.btnimportar.Text = "Importar";
+            this.btnimportar.UseVisualStyleBackColor = true;
+            this.btnimportar.Click += new System.EventHandler(this.btnimportar_Click);
             // 
             // Form1
             // 
@@ -86,7 +86,7 @@
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.groupBox1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -96,7 +96,7 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button btnimportar;
         private System.Windows.Forms.Button tbnexportar;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgv;
     }
 }
 
