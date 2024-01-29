@@ -19,9 +19,39 @@ namespace ExportarExcel
             
         }
 
-        private void btnimportar_Click(object sender, EventArgs e)
+        private void ExportToExcel(DataGridView dataGridView)
         {
+            Excel.Application excelApp = new Excel.Application();
+            excelApp.Visible = true;
 
+            Workbook workbook = excelApp.Workbooks.Add();
+            Worksheet worksheet = (Worksheet)workbook.Sheets[1];
+
+            int columnCount = dataGridView.ColumnCount;
+            int rowCount = dataGridView.RowCount;
+
+            // Establecer encabezados
+            for (int i = 0; i < columnCount; i++)
+            {
+                worksheet.Cells[1, i + 1] = dataGridView.Columns[i].HeaderText;
+            }
+
+            // Copiar datos desde el DataGridView
+            for (int i = 0; i < rowCount; i++)
+            {
+                for (int j = 0; j < columnCount; j++)
+                {
+                    worksheet.Cells[i + 2, j + 1] = dataGridView.Rows[i].Cells[j].Value;
+                }
+            }
+
+            // Guardar el archivo Excel
+            string tempFile = System.IO.Path.GetTempFileName() + ".xls";
+            workbook.SaveAs(tempFile);
+        }
+
+        private void btnimportarr_Click(object sender, EventArgs e)
+        {
             using (OpenFileDialog ofd = new OpenFileDialog())
             {
                 ofd.Filter = "Archivos de Excel|*.xlsx;*.xls|Archivos de Excel 97-2003|*.xls";
@@ -53,44 +83,11 @@ namespace ExportarExcel
                     dgv.DefaultCellStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 11);
                 }
             }
-
-
         }
 
-        private void tbnexportar_Click(object sender, EventArgs e)
+        private void btnexportarr_Click(object sender, EventArgs e)
         {
             ExportToExcel(dgv);
-
         }
-
-        private void ExportToExcel(DataGridView dataGridView)
-        {
-            Excel.Application excelApp = new Excel.Application();
-            excelApp.Visible = true;
-
-            Workbook workbook = excelApp.Workbooks.Add();
-            Worksheet worksheet = (Worksheet)workbook.Sheets[1];
-
-            int columnCount = dataGridView.ColumnCount;
-            for (int i = 0; i < columnCount; i++)
-                for (int j = 0; j < columnCount; j++)
-                {
-                    worksheet.Cells[i + 1, j + 1] = dataGridView.Columns[i].HeaderText;
-                }
-
-
-            int rowCount = dataGridView.RowCount;
-            for (int i = 0; i < rowCount; i++)
-                for (int j = 0; j < columnCount; j++)
-                {
-                    worksheet.Cells[i + 2, j + 1] = dataGridView.Rows[i].Cells[j].Value;
-                }
-            string tempFile = System.IO.Path.GetTempFileName()+".xls";
-            workbook.SaveAs(tempFile);
-        }
-
-
-
-
     }
 }
