@@ -60,7 +60,7 @@
             this.btnexportarr.IconColor = System.Drawing.Color.Black;
             this.btnexportarr.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnexportarr.IconSize = 30;
-            this.btnexportarr.Location = new System.Drawing.Point(319, 15);
+            this.btnexportarr.Location = new System.Drawing.Point(344, 15);
             this.btnexportarr.Name = "btnexportarr";
             this.btnexportarr.Size = new System.Drawing.Size(105, 58);
             this.btnexportarr.TabIndex = 3;
